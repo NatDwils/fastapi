@@ -1,6 +1,16 @@
+import pandas
+from sklearn import tree
+import pydotplus
+from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
+import matplotlib.image as pltimg
 
-def print_hi(name)
-    print(f'Hi, {name}')
-if __name__ == '__main__':
-    print_hi('PyCharm')
+df = pandas.read_csv("shows.csv")
+
+d = {'UK': 0, 'USA': 1, 'N': 2}
+df['Nationality'] = df['Nationality'].map(d)
+d = {'YES': 1, 'NO': 0}
+df['Go'] = df['Go'].map(d)
+
+print(df)
 
